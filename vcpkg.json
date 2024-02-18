@@ -1,0 +1,8 @@
+{
+  "name": "vcpkg-test",
+  "version": "0.1",
+  "dependencies": [
+    "opencv"
+  ],
+  "builtin-baseline": "dafef74af53669ef1cc9015f55e0ce809ead62aa"
+}
