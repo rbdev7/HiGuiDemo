@@ -11,11 +11,24 @@ endif()
 
 project ("HiGuiDemo")
 
+find_package(OPENCV REQUIRED)
+if(OPENCV_FOUND)
+	include_directories(${OPENCV_INCLUDE_DIRS})
+else()
+	message(STATUS "OpenCV NOT found !")
+endif(OPENCV_FOUND)
+
+set(VCPKG_INSTALL_OPTIONS "--clean-after-build")
+
+include_directories(include)
+
 # Add source to this project's executable.
-add_executable (HiGuiDemo "src/HiGuiDemo.cpp" "include/HiGuiDemo.h")
+add_executable (higui_demo "src/HiGuiDemo.cpp" "include/HiGuiDemo.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET HiGuiDemo PROPERTY CXX_STANDARD 20)
+  set_property(TARGET higui_demo PROPERTY CXX_STANDARD 20)
 endif()
 
 # TODO: Add tests and install targets if needed.
+
+target_link_libraries(higui_demo ${OPENCV_LIBRARIES})
