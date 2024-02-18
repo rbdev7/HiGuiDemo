@@ -12,11 +12,11 @@ endif()
 project ("HiGuiDemo")
 
 find_package(OpenCV REQUIRED)
-if(OPENCV_FOUND)
+if(OpenCV_FOUND)
 	include_directories(${OpenCV_INCLUDE_DIRS})
 else()
 	message(STATUS "OpenCV NOT found !")
-endif(OPENCV_FOUND)
+endif(OpenCV_FOUND)
 
 set(VCPKG_INSTALL_OPTIONS "--clean-after-build")
 
