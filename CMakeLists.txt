@@ -11,9 +11,9 @@ endif()
 
 project ("HiGuiDemo")
 
-find_package(OPENCV REQUIRED)
+find_package(OpenCV REQUIRED)
 if(OPENCV_FOUND)
-	include_directories(${OPENCV_INCLUDE_DIRS})
+	include_directories(${OpenCV_INCLUDE_DIRS})
 else()
 	message(STATUS "OpenCV NOT found !")
 endif(OPENCV_FOUND)
@@ -31,4 +31,4 @@ endif()
 
 # TODO: Add tests and install targets if needed.
 
-target_link_libraries(higui_demo ${OPENCV_LIBRARIES})
+target_link_libraries(higui_demo ${OpenCV_LIBRARIES})
